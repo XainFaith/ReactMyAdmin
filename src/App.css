@@ -15,7 +15,7 @@ html, body{
     --primary-bg: white;
     --primary-border: #087da4;
     --secondary-border: #b3b3b3;
-    --overlay: rgba(0,0,0,0.25);
+    --overlay: rgba(0,0,0,0.15);
 }
 
 #App
@@ -52,7 +52,7 @@ html, body{
 input[type=text], input[type=password]
 {
     width: 100%;
-    padding: 10px 20px;
+    padding: 8px 10px;
     margin: 4px;
     box-sizing: border-box;    
     font-size: 1em;
