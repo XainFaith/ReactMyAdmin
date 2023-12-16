@@ -1,4 +1,5 @@
 import React from "react";
+import FieldSet from "./FieldSet";
 import "./ModalPanel.css";
 
 export default function ModalPanel({children, Title})
@@ -6,10 +7,9 @@ export default function ModalPanel({children, Title})
     return( 
             <div className="Overlay">
                 <div className="ModalContainer">
-                    <div className="ModalHeader"><h2>{Title}</h2></div>
-                    <div className="ModalPanel">
+                    <FieldSet Title={Title}>
                         {children}
-                    </div>
+                    </FieldSet>
                 </div>
             </div>);
 }
