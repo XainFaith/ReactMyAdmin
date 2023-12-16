@@ -8,6 +8,12 @@ module.exports = {
     path: path.resolve(__dirname, "public"), // output folder
     publicPath: "/",
   },
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, 'src/components'),
+    },
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
@@ -19,6 +25,16 @@ module.exports = {
             presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [{ 
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          }, }],
+        
       },
       {
         test: /\.css$/,
