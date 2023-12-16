@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "dev.sourcewebdev.ca",
+            "request": "launch",
+            "url": "http://dev.sourcewebdev.ca",
+            "runtimeArgs": ["--remote-debugging-port=9222"],
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
