@@ -5,18 +5,88 @@
 html, body{
     width: 100vw;
     height: 100vh;
+    background-color: white;
+    font-size: 1em;
 }
 
 :root{
-    --primary: rgb(8, 126, 164);
-    --secondary: white;
-    --primary-border: rgb(8, 126, 164);
-
-    --overlay: rgba(0,0,0,0.5);
+    --primary:#087da4;
+    --secondary: whitesmoke;
+    --primary-bg: white;
+    --primary-border: #087da4;
+    --secondary-border: #b3b3b3;
+    --overlay: rgba(0,0,0,0.25);
 }
 
 #App
 {
     background-color: whitesmoke;
     height: 100%;
+}
+
+.UiSection
+{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.UiRowEnd
+{
+    margin-left: auto;
+}
+
+.UiColEnd
+{
+    margin-top: auto;
+}
+
+.UiLabel{
+    flex-basis: 20%;
+    font-weight: bold;
+    font-size: 1.15em;
+}
+
+input[type=text], input[type=password]
+{
+    width: 100%;
+    padding: 10px 20px;
+    margin: 4px;
+    box-sizing: border-box;    
+    font-size: 1em;
+    border: 1px solid var(--secondary-border);
+    outline: none;
+}
+
+input[type=text]:focus, input[type=password]:focus
+{
+    border: 1px solid var(--primary);
+    background-color: var(--secondary);
+}
+
+button{
+    width: 100%;
+    padding: 8px 20px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid var(--primary);
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    outline: none;
+}
+
+button:hover{
+    background-color: var(--secondary); 
+    color:black;
+}
+
+button:focus
+{
+    background-color: var(--secondary); 
+    color:black;
 }
