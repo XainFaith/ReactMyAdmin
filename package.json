@@ -6,6 +6,7 @@
   "author": "Scott Jensen",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "webpack": "^5.89.0"
@@ -24,6 +25,7 @@
   },
   "scripts": {
     "start": "webpack serve --config webpack.config.js",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "api": "cp -r api public/api"
   }
 }
