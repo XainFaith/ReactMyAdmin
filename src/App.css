@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+}
+
+:root{
+    --primary: rgb(8, 126, 164);
+    --secondary: white;
+    --primary-border: rgb(8, 126, 164);
+
+    --overlay: rgba(0,0,0,0.5);
+}
+
+#App
+{
+    background-color: whitesmoke;
+    height: 100%;
+}
