@@ -2,14 +2,14 @@
 
 class ErrorReport
 {
-    public $message = "unknow error has occured!<br>Please contact administration or Support!";
+    public $errorMessage = "unknow error has occured!<br>Please contact administration or Support!";
     public $errorCode;
 
     public function __construct($message = null, $errorCode = 1000) 
     {
         if($message != null)
         {
-            $this->message = $Message;
+            $this->errorMessage = $message;
         }
 
         $this->errorCode = $errorCode;
