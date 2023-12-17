@@ -5,8 +5,6 @@ import App from "./App.jsx"
 import "./App.css";
 
 const container = document.getElementById('App');
-if(container != null)
-{
-    const root = createRoot(container);
-    root.render(<React.StrictMode><App/></React.StrictMode>);
-}
+
+const root = createRoot(container);
+root.render(<React.StrictMode><App/></React.StrictMode>);
