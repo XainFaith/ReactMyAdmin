@@ -7,13 +7,22 @@
         "eslint:recommended",
         "plugin:react/recommended"
     ],
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+    },
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+        }
     },
     "plugins": [
         "react"
     ],
     "rules": {
+        "react/prop-types": "off"
     }
 }
