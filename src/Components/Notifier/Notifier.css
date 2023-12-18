@@ -1,0 +1,85 @@
+
+.ToastsContainer
+{
+    position: fixed;
+    left: 100vw;
+    top: 0;
+}
+
+.Toast
+{
+    max-width: 430px;
+    min-width: 200px;
+    z-index: 99;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 24px;
+    font-weight: bold;
+    position: relative;
+    left: -100%;
+    transition: transform 0.3s ease-out;
+    overflow: hidden;
+    padding: 10px;
+    margin: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.Toast:first-child
+{
+    margin-top: 15px;
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  .Toast.SlideIn 
+  {
+    animation-name: slideIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+  }
+
+  .Toast.SlideOut {
+    transform: translateX(150%);
+    flex: 0;
+  }
+
+ .Toast .CloseButton {
+
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .Toast, .Toast .closeButton {
+    color: #fff;
+  }
+
+  .Toast.Info {
+    background-color: var(--info);
+  }
+  
+  .Toast.Success {
+    background-color: var(--success);
+  }
+  
+  .Toast.Warning {
+    background-color: var(--warning);
+  }
+  
+  .Toast.Error {
+    background-color: var(--error);
+  }
+  
