@@ -12,16 +12,32 @@ html, body{
 :root{
     --primary:#087da4;
     --secondary: whitesmoke;
+
     --primary-bg: white;
+
     --primary-border: #087da4;
     --secondary-border: #b3b3b3;
+
     --overlay: rgba(0,0,0,0.15);
+
+    --info: var(--primary);
+    --success: #4caf50;
+    --warning: #ff9800;
+    --error: #f44336;
 }
 
 #App
 {
     background-color: whitesmoke;
     height: 100%;
+}
+
+.WorkSpace
+{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: var(--primary-bg);
 }
 
 .UiSection
