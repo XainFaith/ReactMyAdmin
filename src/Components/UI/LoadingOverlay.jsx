@@ -14,5 +14,4 @@ export default function LoadingOverlay({isActive, children})
             {overlay}
         </div>
     )
-
 }
