@@ -5,3 +5,29 @@
     background-color: var(--secondary);
     border-right: solid 1px var(--primary);
 }
+
+.PanelContainer
+{
+    border-top: 1px solid var(--primary-border);
+    border-bottom: 1px solid var(--primary-border);
+    background-color: var(--primary-bg);
+}
+
+.PanelHeader
+{
+    background-color: var(--primary);
+    color: white;
+    padding: 5px;
+    font-size: 1.17em;
+}
+
+.DatabaseNavList li::before
+{
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-image: url("../../assets/database-icon.png");
+    background-size: contain;
+    margin-right: 5px;
+}

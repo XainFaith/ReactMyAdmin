@@ -6,6 +6,8 @@ import { NotifierContext } from "./Notifier/Notifier";
 import {user, UserAccessContext } from "./AuthUser";
 
 import "./DatabasePanel.css";
+import NavList from "./UI/NavList";
+import FieldSet from "./UI/FieldSet";
 
 
 export default function DatabasePanel()
@@ -13,7 +15,7 @@ export default function DatabasePanel()
     const authUser = useContext(UserAccessContext);
     const notifier = useContext(NotifierContext);
 
-    const [databases, setDatabases] = useState("");
+    const [databases, setDatabases] = useState([]);
     const [isAwaiting, setAwaiting] = useState(false);
     
     //Query for Avaliable Databases to user, only happens once after first render
@@ -37,7 +39,14 @@ export default function DatabasePanel()
                     return;
                 }
 
-                //TODO Update Datebase Names
+                if(response.data.databases.length != 0)
+                {
+                    setDatabases(response.data.databases);
+                }
+                else
+                {
+                    setDatabases([]);
+                }
                 
             }).catch((error)=>{
                 setAwaiting(false);
@@ -46,11 +55,19 @@ export default function DatabasePanel()
         }
     }
 
+    function onDatabaseSelected(name)
+    {
+
+    }
 
     return(
         <div className="DatabasePanel">
             <LoadingOverlay isActive={isAwaiting}>
-
+            <div className="PanelContainer">
+                <div className="PanelHeader">Databases:</div>
+                    {databases.length ? <NavList navElements={databases} className="DatabaseNavList" onItemSelected={onDatabaseSelected} /> : "No Databases Avaliable"}
+            </div>
+                
             </LoadingOverlay>
         </div>
     );
