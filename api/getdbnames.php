@@ -13,18 +13,16 @@ if($result == false)
     return;
 }
 
-$errorReport = new ErrorReport("System Error", 3000);
-echo $errorReport->stringify();
-
-/*
-echo "[";
+echo "{ \"databases\": ";
+$dbNames = array();
 
 while(($dbName = $result->fetchColumn(0)) !== false)
 {
-    echo $dbName .",";
+    array_push($dbNames, $dbName);
 }
 
-echo "]";
-*/
+echo json_encode($dbNames);
+
+echo "}";
 
 ?>
