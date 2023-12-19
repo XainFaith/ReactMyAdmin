@@ -1,0 +1,27 @@
+.NavList
+{
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.NavList li{
+    padding: 5px;
+}
+
+.NavList li:hover{
+    border: 1px solid var(--primary);
+    background-color: var(--secondary);
+}
+
+.NavList li.Selected
+{
+    background-color: var(--secondary);
+    color: black;
+    text-indent: 1em;
+}
+
+.NavList li.Selected:hover{
+    border: 1px solid var(--primary);
+}
