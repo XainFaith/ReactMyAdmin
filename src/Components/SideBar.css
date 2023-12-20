@@ -14,17 +14,27 @@
     height: 100%;
     width: 64px;
     min-width: 64px;
-    border-right: 1px solid var(--secondary);
+    border-right: 1px solid var(--primary);
 }
 
-.SideBarMenu > .IconButton
+.SideBarMenu > input[type="radio"]
 {
     border-radius: 0;
+    width: 100%;
+    height: 54px;
+    background-position: center;
+    background-repeat: no-repeat;
+    appearance: none;
 }
 
-.SideBarMenu > .Active
+.SideBarMenu > input[type="radio"]:checked
 {
-    background-color: var(--primary-bg);
+    background-color: var(--secondary);
+}
+
+.SideBarMenu > input[type="radio"]:hover
+{
+    background-color: var(--primary-bg);    
 }
 
 .BottomOfSideBar
@@ -32,44 +42,45 @@
     margin-top: auto;
 }
 
-.DatabaseIcon::before
+.DatabaseIcon
 {
-    content: url("../../assets/database-icon.png");
+    background-image: url("../../assets/database-icon.png");
+
 }
 
-.DatabaseIcon.Active::before, .DatabaseIcon:hover::before
+.DatabaseIcon:checked, .DatabaseIcon:hover
 {
-    content: url("../../assets/database-icon-active.png");
+    background-image: url("../../assets/database-icon-active.png");
 }
 
-.TablesIcon::before
+.TablesIcon
 {
-    content: url("../../assets/paper-icon.png");
+    background-image: url("../../assets/paper-icon.png");
 }
 
-.TablesIcon.Active::before, .TablesIcon:hover::before
+.TablesIcon:checked, .TablesIcon:hover
 {
-    content: url("../../assets/paper-icon-active.png");
+    background-image: url("../../assets/paper-icon-active.png");
 }
 
 
-.SettingsIcon::before
+.SettingsIcon
 {
-    content: url("../../assets/settings-icon.png");
+    background-image: url("../../assets/settings-icon.png");
 }
 
-.SettingsIcon.Active::before, .SettingsIcon:hover::before
+.SettingsIcon:checked, .SettingsIcon:hover
 {
-    content: url("../../assets/settings-icon-active.png");
+    background-image: url("../../assets/settings-icon-active.png");
 }
 
-.LogoutIcon::before
+.LogoutIcon
 {
-    content: url("../../assets/logout-icon.png");
+    background-image: url("../../assets/logout-icon.png");
 }
 
-.LogoutIcon:hover::before
+.LogoutIcon:hover
 {
-    content: url("../../assets/logout-icon-active.png");
+    background-image: url("../../assets/logout-icon-active.png");
 }
 

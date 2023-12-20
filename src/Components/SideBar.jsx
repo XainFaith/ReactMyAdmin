@@ -18,13 +18,18 @@ export default function Sidebar()
         setVisiblePanel(panelName);
     }
 
+    const onPromptLogout = ()=>
+    {
+
+    }
+
     return(
         <div className="SideBarContainer">
             <div className="SideBarMenu">
-                <IconButton iconStyle="DatabaseIcon" className={(visiblePanel == "Databases") ? "Active" : null } onClick={(e)=>{e.target.blur(); onButtonClick("Databases");}} />
-                <IconButton iconStyle="TablesIcon" className={(visiblePanel == "Tables") ? "Active" : null } onClick={(e)=>{e.target.blur(); onButtonClick("Tables");}} />
-                <IconButton iconStyle="SettingsIcon" className={(visiblePanel == "Settings") ? "Active BottomOfSideBar" : "BottomOfSideBar" } onClick={(e)=>{e.target.blur();onButtonClick("Settings");}} />
-                <IconButton iconStyle="LogoutIcon" className={(visiblePanel == "Logout") ? "Active" : null } onClick={(e)=>{e.target.blur(); onButtonClick("Logout");}} />
+                <input type="radio" name="menuHeader" className="DatabaseIcon" onChange={()=>onButtonClick("Databases")} checked={visiblePanel == "Databases"} />
+                <input type="radio" name="menuHeader" className="TablesIcon" onChange={()=>onButtonClick("Tables")} checked={visiblePanel == "Tables"} />
+                <input type="radio" name="menuHeader" className="SettingsIcon BottomOfSideBar" onChange={()=>onButtonClick("Settings")} checked={visiblePanel == "Settings"} />
+                <input type="radio" name="menuHeader" className="LogoutIcon" onChange={onPromptLogout} checked={false} />
             </div>
             <CollapsiblePanel isCollpased={(visiblePanel != "Databases")}>
                 <DatabasePanel />
