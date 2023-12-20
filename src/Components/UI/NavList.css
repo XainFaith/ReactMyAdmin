@@ -8,6 +8,7 @@
 
 .NavList li{
     padding: 5px;
+    cursor: pointer;
 }
 
 .NavList li:hover{

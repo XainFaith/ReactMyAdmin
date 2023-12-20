@@ -27,8 +27,6 @@ export default function NavList({navElements, onItemSelected, className})
         
     });
 
-    console.log(navItems);
-
     return(
         <ul className={className ? "NavList " + className : "NavList"}>
             { navItems }
