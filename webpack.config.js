@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public"), // output folder
     publicPath: "/",
+    assetModuleFilename: 'assets/[name][ext][query]',
   },
   resolve: {
     alias: {
@@ -42,6 +43,10 @@ module.exports = {
           "style-loader",
           "css-loader", // for styles
         ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
