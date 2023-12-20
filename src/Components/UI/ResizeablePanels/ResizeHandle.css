@@ -22,3 +22,7 @@
     cursor: ns-resize;
 }
 
+.ResizeHandle:hover
+{
+    background-color: var(--secondary-border);
+}
