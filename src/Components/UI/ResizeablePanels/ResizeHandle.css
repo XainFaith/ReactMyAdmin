@@ -1,7 +1,7 @@
 .ResizeHandle.Horizontal
 {
     display: flex;
-    width: 8px;
+    width: 4px;
     height: 100%;
     background-color: var(--secondary);
     border: 1px solid var(--secondary-border);
@@ -13,7 +13,7 @@
 
 .ResizeHandle.Vertical
 {
-    min-height: 8px;
+    min-height: 4px;
     width: 100%;
     background-color: var(--secondary);
     border: 1px solid var(--secondary-border);
