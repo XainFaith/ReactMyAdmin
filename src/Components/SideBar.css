@@ -1,0 +1,63 @@
+.SideBarContainer
+{
+    display: flex;
+    flex-direction: row;
+    max-width: 300;
+    border-right: 3px solid var(--secondary);
+}
+
+.SideBarMenu
+{
+    background-color: var(--primary);
+    height: 100%;
+    width: 64px;
+    min-width: 64px;
+    border-right: 1px solid var(--secondary);
+}
+
+.SideBarMenu > .IconButton
+{
+    border-radius: 0;
+}
+
+.SideBarMenu > .Active
+{
+    background-color: var(--primary-bg);
+}
+
+.DatabaseIcon::before
+{
+    content: url("../../assets/database-icon.png");
+}
+
+.DatabaseIcon.Active::before, .DatabaseIcon:hover::before
+{
+    content: url("../../assets/database-icon-active.png");
+}
+
+.TablesIcon::before
+{
+    content: url("../../assets/paper-icon.png");
+}
+
+.TablesIcon.Active::before, .TablesIcon:hover::before
+{
+    content: url("../../assets/paper-icon-active.png");
+}
+
+
+.SettingsIcon::before
+{
+    content: url("../../assets/settings-icon.png");
+}
+
+.SettingsIcon.Active::before, .SettingsIcon:hover::before
+{
+    content: url("../../assets/settings-icon-active.png");
+}
+
+.LogoutIcon::before
+{
+    content: url("../../assets/logout-icon.png");
+}
+
