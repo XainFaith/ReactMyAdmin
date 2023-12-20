@@ -1,0 +1,12 @@
+.ResizeablePanel
+{
+    position: relative;
+    height: 100%;
+    background-color: var(--primary-bg);
+    overflow: hidden;
+}
+
+.ResizeablePanel.Vertical
+{
+    max-height: 100vh;
+}
