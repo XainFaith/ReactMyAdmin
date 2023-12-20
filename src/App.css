@@ -40,6 +40,13 @@ html, body{
     background-color: var(--primary-bg);
 }
 
+.SubSpace
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .UiSection
 {
     display: flex;
@@ -83,6 +90,8 @@ input[type=text]:focus, input[type=password]:focus
 }
 
 button{
+    display: flex;
+    justify-content: center;
     width: 100%;
     padding: 8px 20px;
     background-color: var(--primary);
@@ -94,6 +103,7 @@ button{
     font-weight: bold;
     font-size: 1em;
     outline: none;
+    cursor: pointer;
 }
 
 button:hover{
