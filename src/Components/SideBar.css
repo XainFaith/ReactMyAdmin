@@ -68,3 +68,8 @@
     content: url("../../assets/logout-icon.png");
 }
 
+.LogoutIcon:hover::before
+{
+    content: url("../../assets/logout-icon-active.png");
+}
+

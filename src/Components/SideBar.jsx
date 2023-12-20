@@ -23,10 +23,8 @@ export default function Sidebar()
             <div className="SideBarMenu">
                 <IconButton iconStyle="DatabaseIcon" className={(visiblePanel == "Databases") ? "Active" : null } onClick={(e)=>{e.target.blur(); onButtonClick("Databases");}} />
                 <IconButton iconStyle="TablesIcon" className={(visiblePanel == "Tables") ? "Active" : null } onClick={(e)=>{e.target.blur(); onButtonClick("Tables");}} />
-                <div className="BottomOfSideBar">
-                    <IconButton iconStyle="SettingsIcon" className={(visiblePanel == "Settings") ? "Active" : null } onClick={(e)=>{e.target.blur();onButtonClick("Settings");}} />
-                    <IconButton iconStyle="LogoutIcon" className={(visiblePanel == "Logout") ? "Active" : null } onClick={(e)=>{e.target.blur(); onButtonClick("Logout");}} />
-                </div>
+                <IconButton iconStyle="SettingsIcon" className={(visiblePanel == "Settings") ? "Active BottomOfSideBar" : "BottomOfSideBar" } onClick={(e)=>{e.target.blur();onButtonClick("Settings");}} />
+                <IconButton iconStyle="LogoutIcon" className={(visiblePanel == "Logout") ? "Active" : null } onClick={(e)=>{e.target.blur(); onButtonClick("Logout");}} />
             </div>
             <CollapsiblePanel isCollpased={(visiblePanel != "Databases")}>
                 <DatabasePanel />
