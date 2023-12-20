@@ -25,6 +25,7 @@
     background-position: center;
     background-repeat: no-repeat;
     appearance: none;
+    cursor: pointer;
 }
 
 .SideBarMenu > input[type="radio"]:checked
