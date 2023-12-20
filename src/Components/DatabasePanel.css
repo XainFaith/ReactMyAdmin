@@ -2,15 +2,18 @@
 {
     width: 300px;
     height: 100%;
-    background-color: var(--secondary);
-    border-right: solid 1px var(--primary);
+    background-color: var(--primary-bg);
 }
 
 .PanelContainer
 {
     border-top: 1px solid var(--primary-border);
     border-bottom: 1px solid var(--primary-border);
-    background-color: var(--primary-bg);
+}
+
+.DatabaseNavContainer
+{
+    overflow-y: auto;
 }
 
 .PanelHeader
@@ -18,7 +21,14 @@
     background-color: var(--primary);
     color: white;
     padding: 5px;
+    padding-bottom: 0;
+    padding-top: 0;
     font-size: 1.17em;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .DatabaseNavList li::before
@@ -27,7 +37,7 @@
     display: inline-block;
     height: 16px;
     width: 16px;
-    background-image: url("../../assets/database-icon.png");
+    background-image: url("../../assets/database-icon-sm.png");
     background-size: contain;
     margin-right: 5px;
 }

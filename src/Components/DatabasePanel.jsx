@@ -63,11 +63,10 @@ export default function DatabasePanel()
     return(
         <div className="DatabasePanel">
             <LoadingOverlay isActive={isAwaiting}>
-            <div className="PanelContainer">
-                <div className="PanelHeader">Databases:</div>
-                    {databases.length ? <NavList navElements={databases} className="DatabaseNavList" onItemSelected={onDatabaseSelected} /> : "No Databases Avaliable"}
+            <div className="PanelHeader">Databases:</div>
+            <div className="DatabaseNavContainer">
+                {databases.length ? <NavList navElements={databases} className="DatabaseNavList" onItemSelected={onDatabaseSelected} /> : "No Databases Avaliable"}
             </div>
-                
             </LoadingOverlay>
         </div>
     );
