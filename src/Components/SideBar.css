@@ -8,6 +8,8 @@
 
 .SideBarMenu
 {
+    display: flex;
+    flex-direction: column;
     background-color: var(--primary);
     height: 100%;
     width: 64px;
@@ -23,6 +25,11 @@
 .SideBarMenu > .Active
 {
     background-color: var(--primary-bg);
+}
+
+.BottomOfSideBar
+{
+    margin-top: auto;
 }
 
 .DatabaseIcon::before
