@@ -4,7 +4,11 @@ export const user =
 {
     authToken: null,
     privileges: [],
-    selectedDatabase: null
+    selectedDatabase: null,
+    onTokenExipre: ()=>
+    {
+        authToken = null;
+    }
 }
 
-export const UserAccessContext = createContext(null);
+export const UserAccessContext = createContext(user);
