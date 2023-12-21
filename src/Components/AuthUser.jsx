@@ -5,10 +5,7 @@ export const user =
     authToken: null,
     privileges: [],
     selectedDatabase: null,
-    onTokenExipre: ()=>
-    {
-        authToken = null;
-    }
+    logout: null
 }
 
 export const UserAccessContext = createContext(user);
