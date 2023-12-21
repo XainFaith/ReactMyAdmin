@@ -11,7 +11,7 @@ export default function DatabasePanel()
 {
     const authUser = useContext(UserAccessContext);
 
-    const [callApi, response, error, awaiting] = useApi('getdbnames.php');
+    const [callApi, response, error, awaiting] = useApi('getDBNames.php');
 
     //Query for Avaliable Databases to user, only happens once after first render
     useEffect(callApi,[]);
