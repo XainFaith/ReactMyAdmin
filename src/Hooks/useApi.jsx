@@ -16,7 +16,8 @@ export default function useApi(url)
     function callApi(data)
     {
         setAwaiting(true);
-        const postData = {...data, 'authToken': authUser.authToken};
+        setError(null);
+        const postData = {...data, 'authToken': authUser.authToken, 'selectedDatabase': authUser.selectedDatabase};
 
         axios.post('./api/' + url,postData).then((resp)=>
         {
@@ -26,7 +27,10 @@ export default function useApi(url)
                 //Code 1001 is an auth error user no longer is valid 
                 if(resp.data.errorCode == 1001)
                 {
-                    authUser.logout();
+                    if(authUser.logout)
+                    {
+                        authUser.logout();
+                    }
                 }
                 
                 notifier.createError(resp.data.errorMessage);
