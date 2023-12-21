@@ -5,7 +5,7 @@
     background-color: var(--primary-bg);
 }
 
-.PanelContainer
+.DatabasesPanelContainer
 {
     border-top: 1px solid var(--primary-border);
     border-bottom: 1px solid var(--primary-border);

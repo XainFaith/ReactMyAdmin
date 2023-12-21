@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import useApi from "../Hooks/useApi";
 import LoadingOverlay from "./UI/LoadingOverlay";
 import NavList from "./UI/NavList";
@@ -24,7 +24,7 @@ export default function DatabasePanel()
     return(
         <div className="DatabasePanel">
             <LoadingOverlay isActive={awaiting}>
-            <div className="PanelHeader">Databases:</div>
+            <div className="DatabasesPanelHeader">Databases:</div>
             <div className="DatabaseNavContainer">
                 {response ? <NavList navElements={response.databases} className="DatabaseNavList" onItemSelected={onDatabaseSelected}/> : "No Databases Avaliable"}
             </div>
