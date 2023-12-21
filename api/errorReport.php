@@ -3,6 +3,7 @@
 define('SYS_ERROR', 1000);
 define('AUTH_ERROR',1001);
 define('BAD_REQUEST',2000);
+define('SQL_ERROR', 2001);
 
 
 class ErrorReport
