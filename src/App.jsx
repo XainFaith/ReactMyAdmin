@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 import LoginPanel from './Components/LoginPanel';
 import Notifier from './Components/Notifier/Notifier';
 import ResizeablePanel from './Components/UI/ResizeablePanels/ResizeablePanel';
