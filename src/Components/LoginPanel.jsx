@@ -1,19 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ModalPanel from "./UI/ModalPanel";
 
 import axios from "axios";
 import LoadingOverlay from "./UI/LoadingOverlay";
 import { NotifierContext } from "./Notifier/Notifier";
 
+import useApi from "../Hooks/useApi";
 
 export default function LoginPanel({onGranted})
 {
-
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
-    const [awaiting, setAwaiting] = useState(false);
-
     const notifier = useContext(NotifierContext);
+
+    const [response, error, awaiting, callApi] = useApi('auth.php');
 
     function onUsernameChange(e)
     {
@@ -27,28 +27,18 @@ export default function LoginPanel({onGranted})
 
     function onLoginClick()
     {
-        setAwaiting(true);
-        axios.post("./api/auth.php",{
-                    "username": username, 
-                    "password": password }
-        ).then((response)=>
-        {
-            setAwaiting(false);
-            //Did we recieve an error report
-            if(response.data.errorCode !== undefined)
-            {
-                notifier.createError(response.data.errorMessage);
-                return;
-            }
-
-            //Else wise it is an access token for the user
-            onGranted(response.data);
-            
-        }).catch((error)=>{
-            setAwaiting(false);
-            notifier.createError(error.message);
-        })
+        callApi({ "username": username, "password": password });
     }
+
+    //useEffect is used here becuase the response value is not something used directly by the component
+    useEffect(()=>
+    {
+        if(response != null)
+        {
+            onGranted(response);
+        }
+
+    },[response])
 
     return(
         <ModalPanel Title="React My Admin">
