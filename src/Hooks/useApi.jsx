@@ -26,7 +26,7 @@ export default function useApi(url)
                 //Code 1001 is an auth error user no longer is valid 
                 if(resp.data.errorCode == 1001)
                 {
-                    authUser.onTokenExipre();
+                    authUser.logout();
                 }
                 
                 notifier.createError(resp.data.errorMessage);
@@ -36,7 +36,7 @@ export default function useApi(url)
             
             if(url == "logout.php")
             {
-                authUser.authToken = null;
+                authUser.logout();
             }
 
             setResponse(resp.data);
