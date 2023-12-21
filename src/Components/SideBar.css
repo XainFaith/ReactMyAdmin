@@ -17,7 +17,7 @@
     border-right: 1px solid var(--primary);
 }
 
-.SideBarMenu > input[type="checkbox"], button
+.SideBarMenu > input[type="checkbox"], .SideBarMenu > button
 {
     border-radius: 0;
     width: 100%;
