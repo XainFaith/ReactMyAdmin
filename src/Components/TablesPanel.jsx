@@ -6,9 +6,9 @@ export default function TablesPanel()
 {
     const [tableNames, setTableNames] = useState([]);
 
-    const [response, error, awaiting, callApi] = useApi('getTables.php');
+    const [callApi, response, error, awaiting] = useApi('getTables.php');
 
     return(
-    
+     null
     );
 }
