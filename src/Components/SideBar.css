@@ -17,7 +17,7 @@
     border-right: 1px solid var(--primary);
 }
 
-.SideBarMenu > input[type="radio"]
+.SideBarMenu > input[type="checkbox"]
 {
     border-radius: 0;
     width: 100%;
@@ -28,12 +28,12 @@
     cursor: pointer;
 }
 
-.SideBarMenu > input[type="radio"]:checked
+.SideBarMenu > input[type="checkbox"]:checked
 {
     background-color: var(--secondary);
 }
 
-.SideBarMenu > input[type="radio"]:hover
+.SideBarMenu > input[type="checkbox"]:hover
 {
     background-color: var(--primary-bg);    
 }

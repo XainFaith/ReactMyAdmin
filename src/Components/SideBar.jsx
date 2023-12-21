@@ -13,9 +13,14 @@ export default function Sidebar()
 
     const onButtonClick = (panelName)=>
     {
-        if(visiblePanel == panelName) setVisiblePanel("none");
+        if(visiblePanel == panelName) 
+        {
+            setVisiblePanel("none");
+        }
         else
-        setVisiblePanel(panelName);
+        {
+            setVisiblePanel(panelName);
+        }
     }
 
     const onPromptLogout = ()=>
@@ -26,10 +31,10 @@ export default function Sidebar()
     return(
         <div className="SideBarContainer">
             <div className="SideBarMenu">
-                <input type="radio" name="menuHeader" className="DatabaseIcon" onChange={()=>onButtonClick("Databases")} checked={visiblePanel == "Databases"} />
-                <input type="radio" name="menuHeader" className="TablesIcon" onChange={()=>onButtonClick("Tables")} checked={visiblePanel == "Tables"} />
-                <input type="radio" name="menuHeader" className="SettingsIcon BottomOfSideBar" onChange={()=>onButtonClick("Settings")} checked={visiblePanel == "Settings"} />
-                <input type="radio" name="menuHeader" className="LogoutIcon" onChange={onPromptLogout} checked={false} />
+                <input type="checkbox" className="DatabaseIcon" onChange={()=>onButtonClick("Databases")} checked={visiblePanel == "Databases"} />
+                <input type="checkbox" className="TablesIcon" onChange={()=>onButtonClick("Tables")} checked={visiblePanel == "Tables"} />
+                <input type="checkbox" className="SettingsIcon BottomOfSideBar" onChange={()=>onButtonClick("Settings")} checked={visiblePanel == "Settings"} />
+                <input type="checkbox" className="LogoutIcon" onChange={onPromptLogout} checked={false} />
             </div>
             <CollapsiblePanel isCollpased={(visiblePanel != "Databases")}>
                 <DatabasePanel />
