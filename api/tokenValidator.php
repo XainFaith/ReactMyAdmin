@@ -13,6 +13,7 @@ class TokenValidator
             global $rmadbname;
             global $rmadbUser;
             global $rmadbPass;
+            global $extendTime;
 
             $pdo = new PDO("mysql:host=localhost;dbname=$rmadbname", $rmadbUser, $rmadbPass);
             $statment = $pdo->prepare('SELECT * FROM access WHERE user=:tokenUser');
@@ -42,7 +43,7 @@ class TokenValidator
             $currentTime = time();
             
             //Has the token expired
-            if($tokenInfo['expireTime'] > $currentTime)
+            if($tokenInfo['expireTime'] < $currentTime)
             {
                 $report = new ErrorReport("Token has Expired!", AUTH_ERROR);
                 return $report;
