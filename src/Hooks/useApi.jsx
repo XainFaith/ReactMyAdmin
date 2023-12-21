@@ -33,7 +33,12 @@ export default function useApi(url)
                 setError(resp.data.errorCode);
                 return;
             }
-    
+            
+            if(url == "logout.php")
+            {
+                authUser.authToken = null;
+            }
+
             setResponse(resp.data);
         }).catch((error)=>
         {
@@ -43,5 +48,5 @@ export default function useApi(url)
         
     }
 
-    return [response, error, awaiting, callApi];
+    return [callApi, response, error, awaiting];
 }
