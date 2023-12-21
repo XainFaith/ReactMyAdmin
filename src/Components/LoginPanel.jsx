@@ -13,7 +13,7 @@ export default function LoginPanel({onGranted})
     const [password,setPassword] = useState("");
     const notifier = useContext(NotifierContext);
 
-    const [response, error, awaiting, callApi] = useApi('auth.php');
+    const [ callApi, response, error, awaiting] = useApi('auth.php');
 
     function onUsernameChange(e)
     {
