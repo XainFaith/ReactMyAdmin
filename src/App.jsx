@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LoginPanel from './Components/LoginPanel';
 import Notifier from './Components/Notifier/Notifier';
 import ResizeablePanel from './Components/UI/ResizeablePanels/ResizeablePanel';
 import ResizeHandle from './Components/UI/ResizeablePanels/ResizeHandle';
 import { UserAccessContext, user } from './Components/AuthUser';
-import DatabasePanel from './Components/DatabasePanel';
 import Sidebar from './Components/SideBar';
 
 export default function App()
@@ -14,7 +13,12 @@ export default function App()
 
     function onGranted(token)
     {
-        setAuthUser({...authUser, authToken: token});
+        setAuthUser({...authUser, authToken: token, logout: onLogout});
+    }
+
+    function onLogout()
+    {
+        setAuthUser({...authUser, authToken: null});
     }
 
     return( <Notifier> 
