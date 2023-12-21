@@ -4,6 +4,7 @@ import DatabasePanel from "./DatabasePanel";
 import useApi from "../Hooks/useApi";
 
 import "./SideBar.css";
+import TablesPanel from "./TablesPanel";
 
 
 export default function Sidebar()
@@ -42,7 +43,7 @@ export default function Sidebar()
             </CollapsiblePanel>
 
             <CollapsiblePanel isCollpased={(visiblePanel != "Tables")}>
-
+                <TablesPanel />
             </CollapsiblePanel>
         </div>
     )
