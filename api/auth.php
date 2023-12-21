@@ -6,7 +6,7 @@ include_once "./errorReport.php";
 
 if(isset($_POST_DATA['username']) == false || isset($_POST_DATA['password']) == false)
 {
-    $errorReport = new ErrorReport("Bad Request!", 2000);
+    $errorReport = new ErrorReport("Bad Request!", BAD_REQUEST);
     echo $errorReport->stringify();
     return;
 }
@@ -49,7 +49,7 @@ try
     $statment->bindParam('encToken', $pwdToken);
     if($statment->execute() == false)
     {
-        $errorReport = new ErrorReport("System Error", 2002);
+        $errorReport = new ErrorReport("System Error", BAD_REQUEST);
         echo $errorReport->stringify();
         return;
     }
@@ -58,7 +58,7 @@ try
 }
 catch(PDOException $e)
 {
-    $errorReport = new ErrorReport("Bad Username Or Password!", 2001);
+    $errorReport = new ErrorReport("Bad Username Or Password!", AUTH_ERROR);
     echo $errorReport->stringify();
     return;
 }

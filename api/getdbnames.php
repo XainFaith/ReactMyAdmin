@@ -8,7 +8,7 @@ $result = $pdo->query('SHOW DATABASES');
 
 if($result == false)
 {
-    $errorReport = new ErrorReport("System Error", 3000);
+    $errorReport = new ErrorReport("System Error", SYS_ERROR);
     echo $errorReport->stringify();
     return;
 }

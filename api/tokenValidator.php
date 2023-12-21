@@ -19,14 +19,14 @@ class TokenValidator
             $statment->bindParam('tokenUser', $tokenUser);
             if(!$statment->execute())
             {
-                $report = new ErrorReport($statment->errorInfo(), 1010);
+                $report = new ErrorReport($statment->errorInfo(), SYS_ERROR);
                 return $report;
             }
 
             //Check for results no token for the user was given!
             if($statment->rowCount() <= 0)
             {
-                $report = new ErrorReport("Token has Expired!", 554);
+                $report = new ErrorReport("Token has Expired!", AUTH_ERROR);
                 return $report;
             }
 
@@ -35,7 +35,7 @@ class TokenValidator
             //If the token stored in the system exists but does not match its a bad token
             if($tokenInfo['authToken'] != $authToken)
             {
-                $report = new ErrorReport("Token has Expired!", 555);
+                $report = new ErrorReport("Token has Expired!", AUTH_ERROR);
                 return $report;
             }
 
@@ -44,7 +44,7 @@ class TokenValidator
             //Has the token expired
             if($tokenInfo['expireTime'] > $currentTime)
             {
-                $report = new ErrorReport("Token has Expired!", 556);
+                $report = new ErrorReport("Token has Expired!", AUTH_ERROR);
                 return $report;
             }
 
@@ -61,7 +61,7 @@ class TokenValidator
 
             if (hash_equals($hmac, $calcmac) == false)// timing attack safe comparison
             {
-                $report = new ErrorReport("System Error!", 557);
+                $report = new ErrorReport("System Error!", AUTH_ERROR);
                 return $report;
             }
 
@@ -75,7 +75,7 @@ class TokenValidator
             $statment->bindParam('newTime', $extendedTime);
             if(!$statment->execute())
             {
-                $report = new ErrorReport("System Error!", 1000);
+                $report = new ErrorReport("System Error!", AUTH_ERROR);
                 return $report;
             }
 
@@ -86,7 +86,7 @@ class TokenValidator
         }
         catch(PDOException $e)
         {
-            $report = new ErrorReport("System Error!", 1000);
+            $report = new ErrorReport("System Error!", SYS_ERROR);
             return $report;
         }
     }
