@@ -17,7 +17,7 @@
     border-right: 1px solid var(--primary);
 }
 
-.SideBarMenu > input[type="checkbox"]
+.SideBarMenu > input[type="checkbox"], button
 {
     border-radius: 0;
     width: 100%;
@@ -27,6 +27,7 @@
     appearance: none;
     cursor: pointer;
 }
+
 
 .SideBarMenu > input[type="checkbox"]:checked
 {
