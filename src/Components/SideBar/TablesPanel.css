@@ -1,0 +1,37 @@
+.TablesPanel
+{
+    width: 300px;
+    height: 100%;
+    background-color: var(--primary-bg);
+}
+
+.TablesNavContainer
+{
+    overflow-y: auto;
+}
+
+.TablesPanelHeader
+{
+    background-color: var(--primary);
+    color: white;
+    padding: 5px;
+    padding-bottom: 0;
+    padding-top: 0;
+    font-size: 1.17em;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.TablesNavList li::before
+{
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-image: url("../../../assets/database-icon-sm.png");
+    background-size: contain;
+    margin-right: 5px;
+}
