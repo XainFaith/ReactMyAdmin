@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+
 import LoginPanel from './Components/LoginPanel';
 import Notifier from './Components/Notifier/Notifier';
 import ResizeablePanel from './Components/UI/ResizeablePanels/ResizeablePanel';
 import ResizeHandle from './Components/UI/ResizeablePanels/ResizeHandle';
-import { UserAccessContext, user } from './Components/AuthUser';
-import Sidebar from './Components/SideBar';
+import Sidebar from './Components/SideBar/SideBar';
+
+import { UserAccessContext, user } from './Context/AuthUser';
+
+import "./App.css";
 
 export default function App()
 {
