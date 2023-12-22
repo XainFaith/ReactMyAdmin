@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import CollapsiblePanel from "./UI/CollapsiblePanel";
-import DatabasePanel from "./DatabasePanel";
-import useApi from "../Hooks/useApi";
 
-import "./SideBar.css";
+import CollapsiblePanel from "../UI/CollapsiblePanel";
+import DatabasePanel from "./DatabasePanel";
 import TablesPanel from "./TablesPanel";
 
+import useApi from "../../Hooks/useApi";
+
+import "./SideBar.css";
 
 export default function Sidebar()
 {

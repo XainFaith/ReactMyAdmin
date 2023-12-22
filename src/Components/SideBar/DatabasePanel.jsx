@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import useApi from "../Hooks/useApi";
-import LoadingOverlay from "./UI/LoadingOverlay";
-import NavList from "./UI/NavList";
+import useApi from "../../Hooks/useApi";
+import LoadingOverlay from "../UI/LoadingOverlay";
+import NavList from "../UI/NavList";
 
-import { UserAccessContext } from "./AuthUser";
+import { UserAccessContext } from "../../Context/AuthUser";
 
 import "./DatabasePanel.css";
 

@@ -1,16 +1,22 @@
-.TablesPanel
+.DatabasePanel
 {
     width: 300px;
     height: 100%;
     background-color: var(--primary-bg);
 }
 
-.TablesNavContainer
+.DatabasesPanelContainer
+{
+    border-top: 1px solid var(--primary-border);
+    border-bottom: 1px solid var(--primary-border);
+}
+
+.DatabaseNavContainer
 {
     overflow-y: auto;
 }
 
-.TablesPanelHeader
+.PanelHeader
 {
     background-color: var(--primary);
     color: white;
@@ -25,13 +31,13 @@
     flex-direction: column;
 }
 
-.TablesNavList li::before
+.DatabaseNavList li::before
 {
     content: '';
     display: inline-block;
     height: 16px;
     width: 16px;
-    background-image: url("../../assets/database-icon-sm.png");
+    background-image: url("../../../assets/database-icon-sm.png");
     background-size: contain;
     margin-right: 5px;
 }

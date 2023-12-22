@@ -46,43 +46,43 @@
 
 .DatabaseIcon
 {
-    background-image: url("../../assets/database-icon.png");
+    background-image: url("../../../assets/database-icon.png");
 
 }
 
 .DatabaseIcon:checked, .DatabaseIcon:hover
 {
-    background-image: url("../../assets/database-icon-active.png");
+    background-image: url("../../../assets/database-icon-active.png");
 }
 
 .TablesIcon
 {
-    background-image: url("../../assets/paper-icon.png");
+    background-image: url("../../../assets/paper-icon.png");
 }
 
 .TablesIcon:checked, .TablesIcon:hover
 {
-    background-image: url("../../assets/paper-icon-active.png");
+    background-image: url("../../../assets/paper-icon-active.png");
 }
 
 
 .SettingsIcon
 {
-    background-image: url("../../assets/settings-icon.png");
+    background-image: url("../../../assets/settings-icon.png");
 }
 
 .SettingsIcon:checked, .SettingsIcon:hover
 {
-    background-image: url("../../assets/settings-icon-active.png");
+    background-image: url("../../../assets/settings-icon-active.png");
 }
 
 .LogoutIcon
 {
-    background-image: url("../../assets/logout-icon.png");
+    background-image: url("../../../assets/logout-icon.png");
 }
 
 .LogoutIcon:hover
 {
-    background-image: url("../../assets/logout-icon-active.png");
+    background-image: url("../../../assets/logout-icon-active.png");
 }
 
