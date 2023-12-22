@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 import { NotifierContext } from "../Components/Notifier/Notifier";
-import { UserAccessContext } from "../Components/AuthUser";
+import { UserAccessContext } from "../Context/AuthUser";
 
 export default function useApi(url)
 {
