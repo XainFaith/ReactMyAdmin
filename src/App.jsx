@@ -9,6 +9,7 @@ import Sidebar from './Components/SideBar/SideBar';
 import { UserAccessContext, user } from './Context/AuthUser';
 
 import "./App.css";
+import Workspace from './Components/Workspace/Workspace';
 
 export default function App()
 {
@@ -32,6 +33,7 @@ export default function App()
                         <Sidebar />
                         <div className="SubSpace">
                             <ResizeablePanel isVertical={true} defaultSize="70%">
+                                <Workspace />
                             </ResizeablePanel>
                             <ResizeHandle isVertical={true}/>
                             <ResizeablePanel isVertical={true} defaultSize="30%">
