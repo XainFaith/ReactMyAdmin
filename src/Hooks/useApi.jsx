@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 import { NotifierContext } from "../Components/Notifier/Notifier";
-import { UserAccessContext } from "../Context/AuthUser";
+import { AuthUserContext } from "../Context/AuthUser";
+import useAuthContext from "./useAuthContext";
 
 export default function useApi(url)
 {
     const notifier = useContext(NotifierContext);
-    const authUser = useContext(UserAccessContext);
+    const access = useAuthContext();
 
     const [error, setError] = useState(null);
     const [response, setResponse] = useState(null);
@@ -17,7 +18,7 @@ export default function useApi(url)
     {
         setAwaiting(true);
         setError(null);
-        const postData = {...data, 'authToken': authUser.authToken, 'selectedDatabase': authUser.selectedDatabase};
+        const postData = {...data, 'authToken': access.user.authToken, 'selectedDatabase': access.user.selectedDatabase, 'selectedTable': access.user.selectedTable};
 
         axios.post('./api/' + url,postData).then((resp)=>
         {
@@ -38,11 +39,6 @@ export default function useApi(url)
                 return;
             }
             
-            if(url == "logout.php")
-            {
-                authUser.logout();
-            }
-
             setResponse(resp.data);
         }).catch((error)=>
         {
