@@ -44,7 +44,7 @@ try
     $statment->bindParam('authToken', $userToken);
     $statment->bindParam('user', $user);
 
-    $expireTime = (time() + extendTime);
+    $expireTime = (time() + $extendTime);
     $statment->bindParam('expireTime', $expireTime);
     $statment->bindParam('encToken', $pwdToken);
     if($statment->execute() == false)
