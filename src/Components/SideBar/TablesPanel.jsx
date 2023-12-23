@@ -24,7 +24,7 @@ export default function TablesPanel()
 
     const onTableSelected = (name)=>
     {
-        access.onDatabaseSelected(name);
+        access.onTableSelected(name);
     }
 
     const onTablesRefresh = ()=>
