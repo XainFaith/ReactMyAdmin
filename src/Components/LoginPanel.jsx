@@ -7,12 +7,15 @@ import { NotifierContext } from "./Notifier/Notifier";
 
 import useApi from "../Hooks/useApi";
 import Button from "./UI/Button";
+import useAuthContext from "../Hooks/useAuthContext";
 
-export default function LoginPanel({onGranted})
+export default function LoginPanel()
 {
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
+    
     const notifier = useContext(NotifierContext);
+    const userContext = useAuthContext();
 
     const [ callApi, response, error, awaiting] = useApi('auth.php');
 
@@ -36,7 +39,7 @@ export default function LoginPanel({onGranted})
     {
         if(response != null)
         {
-            onGranted(response);
+            userContext.onGranted(response);
         }
 
     },[response])
