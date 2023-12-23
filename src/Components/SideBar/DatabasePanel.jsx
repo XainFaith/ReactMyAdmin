@@ -18,12 +18,12 @@ export default function DatabasePanel()
     //Query for Avaliable Databases to user, only happens once after first render
     useEffect(callApi,[]);
     
-    function onDatabaseSelected(name)
+    const onDatabaseSelected = (name)=>
     {
         authUser.selectedDatabase = name;
     }
 
-    function onDatabasesRefresh()
+    const onDatabasesRefresh = ()=>
     {
         callApi();
     }
