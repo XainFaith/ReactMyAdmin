@@ -1,0 +1,25 @@
+.TabHeaderContainer
+{
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.TabHeaderItem
+{
+    appearance: none;
+    background-color: var(--secondary);
+    border: 1px solid var(--primary-border);
+    width: auto;
+    min-width: 100px;
+    color: black;
+    border-radius: 0;
+}
+
+.TabHeaderItem.Selected
+{
+    background-color: var(--primary-bg);
+    border: 1px solid var(--primary-border);
+    border-bottom: 0;
+}
