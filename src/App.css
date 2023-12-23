@@ -88,31 +88,3 @@ input[type=text]:focus, input[type=password]:focus
     border: 1px solid var(--primary);
     background-color: var(--secondary);
 }
-
-button{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 8px 20px;
-    background-color: var(--primary);
-    color: white;
-    border-radius: 5px;
-    border: 1px solid var(--primary);
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1em;
-    outline: none;
-    cursor: pointer;
-}
-
-button:hover{
-    background-color: var(--secondary); 
-    color:black;
-}
-
-button:focus
-{
-    background-color: var(--secondary); 
-    color:black;
-}
