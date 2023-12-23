@@ -11,12 +11,7 @@
     border-bottom: 1px solid var(--primary-border);
 }
 
-.DatabaseNavContainer
-{
-    overflow-y: auto;
-}
-
-.PanelHeader
+.DatabasesPanelHeader
 {
     background-color: var(--primary);
     color: white;
@@ -26,9 +21,29 @@
     font-size: 1.17em;
     height: 38px;
     display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+}
+
+.DatabaseRefresh
+{
+    margin-left: auto;
+    background-image: url("../../../assets/refresh-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+}
+
+.DatabaseRefresh:hover
+{
+    background-image: url("../../../assets/refresh-icon-active.png");
+}
+
+.DatabaseNavContainer
+{
+    overflow-y: auto;
 }
 
 .DatabaseNavList li::before
@@ -41,3 +56,4 @@
     background-size: contain;
     margin-right: 5px;
 }
+
