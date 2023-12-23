@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Button from "../UI/Button";
 
 export default function Toast({children, className, onRemove, autoClose=true, data})
 {
@@ -45,7 +46,7 @@ export default function Toast({children, className, onRemove, autoClose=true, da
             <div>
                 {children}
             </div>
-            <button className="CloseButton" onClick={onClose}>X</button>
+            <Button className="CloseButton" onClick={onClose}>X</Button>
         </div>
     );
 }

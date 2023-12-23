@@ -6,6 +6,7 @@ import LoadingOverlay from "./UI/LoadingOverlay";
 import { NotifierContext } from "./Notifier/Notifier";
 
 import useApi from "../Hooks/useApi";
+import Button from "./UI/Button";
 
 export default function LoginPanel({onGranted})
 {
@@ -52,7 +53,7 @@ export default function LoginPanel({onGranted})
                     </div>
                 </form>
                 <div className="UiSection">
-                    <button onClick={onLoginClick}>Login</button>
+                    <Button onClick={onLoginClick}>Login</Button>
                 </div>
             </LoadingOverlay>
         </ModalPanel>

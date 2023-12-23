@@ -7,6 +7,7 @@ import TablesPanel from "./TablesPanel";
 import useApi from "../../Hooks/useApi";
 
 import "./SideBar.css";
+import Button from "../UI/Button";
 
 export default function Sidebar()
 {
@@ -37,7 +38,7 @@ export default function Sidebar()
                 <input type="checkbox" className="DatabaseIcon" onChange={()=>onButtonClick("Databases")} checked={visiblePanel == "Databases"} />
                 <input type="checkbox" className="TablesIcon" onChange={()=>onButtonClick("Tables")} checked={visiblePanel == "Tables"} />
                 <input type="checkbox" className="SettingsIcon BottomOfSideBar" onChange={()=>onButtonClick("Settings")} checked={visiblePanel == "Settings"} />
-                <button className="LogoutIcon" onClick={onPromptLogout} />
+                <Button className="LogoutIcon" onClick={onPromptLogout} />
             </div>
             <CollapsiblePanel isCollpased={(visiblePanel != "Databases")}>
                 <DatabasePanel />
