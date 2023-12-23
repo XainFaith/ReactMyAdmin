@@ -1,23 +1,23 @@
 import React, { useContext, useEffect } from "react";
 
 import useApi from "../../Hooks/useApi";
-import { AuthUserContext } from '../../Context/AuthUser';
+import useAuthContext from "../../Hooks/useAuthContext";
 
 
 export default function StructureViewer()
 {
-    const authUser = useContext(AuthUserContext);
+    const access = useAuthContext();
 
     const [callApi, response, error, awaiting] = useApi('getTableStructure.php');
 
     useEffect(()=>
     {
-        if(authUser.selectedTable != null)
+        if(access.user.selectedTable != null)
         {
             callApi();
         }
 
-    }, [authUser]);
+    }, [access.user.selectedTable]);
 
     if(response == null)
     {
