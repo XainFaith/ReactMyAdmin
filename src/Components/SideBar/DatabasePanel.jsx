@@ -1,17 +1,16 @@
-import React, { useContext, useEffect } from "react";
-import useApi from "../../Hooks/useApi";
+import React, { useEffect } from "react";
 import LoadingOverlay from "../UI/LoadingOverlay";
 import NavList from "../UI/NavList";
 import Button from "../UI/Button";
 
-import { UserAccessContext } from "../../Context/AuthUser";
+import useApi from "../../Hooks/useApi";
+import useAuthContext from "../../Hooks/useAuthContext";
 
 import "./DatabasePanel.css";
 
-
 export default function DatabasePanel()
 {
-    const authUser = useContext(UserAccessContext);
+    const access = useAuthContext();
 
     const [callApi, response, error, awaiting] = useApi('getDBNames.php');
 
@@ -20,7 +19,7 @@ export default function DatabasePanel()
     
     const onDatabaseSelected = (name)=>
     {
-        authUser.selectedDatabase = name;
+        access.onDatabaseSelected(name);
     }
 
     const onDatabasesRefresh = ()=>
