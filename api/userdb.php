@@ -4,6 +4,7 @@ include_once "./db.php";
 include_once "./tokenValidator.php";
 include_once "./errorReport.php";
 
+
 $accessPwd = null;
 $tokenUser = null;
 
@@ -31,6 +32,17 @@ else
     }
 }
 
+$selectedDbname = null;
+$selectedTable = null;
 
+if(isset($_POST_DATA['selectedDatabase']))
+{
+    $selectedDbname =  $_POST_DATA['selectedDatabase'];
+}
+
+if(isset($_POST_DATA['selectedTable']))
+{
+    $selectedTable = $_POST_DATA['selectedTable'];
+}
 
 ?>

@@ -5,9 +5,8 @@ include_once "./errorReport.php";
 
 if(isset($_POST_DATA['selectedDatabase']))
 {
-    $dname = $_POST_DATA['selectedDatabase'];
     try{
-        $pdo = new PDO("mysql:host=localhost;dbname=$dname", $tokenUser, $accessPwd);
+        $pdo = new PDO("mysql:host=localhost;dbname=$selectedDbname", $tokenUser, $accessPwd);
         $result = $pdo->query('SHOW TABLES');
 
         if($result == false)

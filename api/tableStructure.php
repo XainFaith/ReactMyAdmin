@@ -2,7 +2,7 @@
 
 class FieldStructure
 {
-    public $name;
+    public $field;
     public $type;
     public $nullable;
     public $key;
@@ -11,7 +11,7 @@ class FieldStructure
 
     public function __construct($fieldDesc)
     {
-        $this->name = $fieldDesc['Name'];
+        $this->field = $fieldDesc['Field'];
         $this->type = $fieldDesc['Type'];
         $this->nullable = $fieldDesc['Null'];
         $this->key = $fieldDesc['Key'];
@@ -22,7 +22,7 @@ class FieldStructure
 
 class TableStructure
 {
-    private $fields = array();
+    public $fields = array();
 
     public function __construct()
     {
@@ -31,12 +31,12 @@ class TableStructure
 
     public function AddField($field)
     {
-        $fields = array_push($fields, $field);
+        array_push($this->fields, $field);
     }
 
     public function stringify()
     {
-        return json_encode($this);
+        return json_encode($this->fields);
     }
 }
 
