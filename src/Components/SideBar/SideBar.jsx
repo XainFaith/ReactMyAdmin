@@ -8,11 +8,12 @@ import useApi from "../../Hooks/useApi";
 
 import "./SideBar.css";
 import Button from "../UI/Button";
+import useAuthContext from "../../Hooks/useAuthContext";
 
 export default function Sidebar()
 {
-
     const [visiblePanel, setVisiblePanel] = useState("Databases");
+    const access = useAuthContext();
     const [callApi] = useApi('logout.php');
 
     const onButtonClick = (panelName)=>
@@ -30,6 +31,7 @@ export default function Sidebar()
     const onPromptLogout = ()=>
     {
         callApi();
+        access.onLogout();
     }
 
     return(
