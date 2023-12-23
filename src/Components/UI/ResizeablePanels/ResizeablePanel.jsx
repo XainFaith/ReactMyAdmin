@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 import "./ResizeablePanel.css";
 
-export default function ResizeablesPanel({children, defaultSize='50%', isVertical=false})
+export default function ResizeablePanel({children, defaultSize='50%', isVertical=false})
 {
   
     return(
