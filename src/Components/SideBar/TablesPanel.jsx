@@ -1,34 +1,35 @@
 import React, { useContext, useEffect } from "react";
-import useApi from "../../Hooks/useApi";
 import LoadingOverlay from "../UI/LoadingOverlay";
 import NavList from "../UI/NavList";
 import Button from "../UI/Button";
 
-import { UserAccessContext } from "../../Context/AuthUser";
+import useApi from "../../Hooks/useApi";
+import useAuthContext from "../../Hooks/useAuthContext";
+
 import "./TablesPanel.css";
 
 export default function TablesPanel()
 {
-    const authUser = useContext(UserAccessContext);
+    const access = useAuthContext();
     const [callApi, response, error, awaiting] = useApi('getTableNames.php');
 
     useEffect(()=>
     {
-        if(authUser.selectedDatabase != null)
+        if(access.user.selectedDatabase != null)
         {
             callApi();    
         }  
     }
-    ,[authUser.selectedDatabase]);
+    ,[access.user.selectedDatabase]);
 
     const onTableSelected = (name)=>
     {
-
+        access.onDatabaseSelected(name);
     }
 
     const onTablesRefresh = ()=>
     {
-        if(authUser.selectedDatabase != null)
+        if(access.user.selectedDatabase != null)
         {
             callApi();
         }
