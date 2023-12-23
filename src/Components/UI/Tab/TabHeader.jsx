@@ -11,7 +11,6 @@ export default function TabHeader({tabNames, onTabChanged, defaultSelected})
 
     function onTabSelected(name)
     {
-        console.log(name);
         if(name != selectedTab)
         {
             setSelectedTab(name);
