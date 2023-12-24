@@ -9,9 +9,12 @@ import useApi from "../../Hooks/useApi";
 import "./SideBar.css";
 import Button from "../UI/Button";
 import useAuthContext from "../../Hooks/useAuthContext";
+import ModalPanel from "../UI/ModalPanel";
 
 export default function Sidebar()
 {
+    const [logoutModalVisible, setLogoutModalVisible] = useState(false);
+
     const [visiblePanel, setVisiblePanel] = useState("Databases");
     const access = useAuthContext();
     const [callApi] = useApi('logout.php');
@@ -30,8 +33,7 @@ export default function Sidebar()
 
     const onPromptLogout = ()=>
     {
-        callApi();
-        access.onLogout();
+        setLogoutModalVisible(true);
     }
 
     return(
@@ -49,6 +51,13 @@ export default function Sidebar()
             <CollapsiblePanel isCollpased={(visiblePanel != "Tables")}>
                 <TablesPanel />
             </CollapsiblePanel>
+
+            <ModalPanel Title="Confirm Logout" isVisible={logoutModalVisible}>
+                <div className="FlexRow LogoutModalContent">
+                    <Button onClick={()=>{ callApi(); access.onLogout();}}>Logout</Button>
+                    <Button onClick={()=>setLogoutModalVisible(false)}>Cancel</Button>
+                </div>
+            </ModalPanel>
         </div>
     )
 }

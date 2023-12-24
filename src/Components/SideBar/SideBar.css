@@ -90,3 +90,7 @@
     background-image: url("../../../assets/logout-icon-active.png");
 }
 
+.LogoutModalContent > button
+{
+    margin: 5px;
+}
