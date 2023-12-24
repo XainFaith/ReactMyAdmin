@@ -1,0 +1,15 @@
+.StructureDataTable
+{
+    width: 100%;
+    font-size: 1.15em;
+}
+
+.StructureDataTable tbody tr:nth-child(even) 
+{
+    background-color: var(--primary-bg);
+}
+
+.StructureDataTable tbody tr:nth-child(odd) 
+{
+    background-color: var(--secondary);
+}
