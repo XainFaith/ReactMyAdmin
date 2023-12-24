@@ -1,4 +1,5 @@
-import React, { createContext, useCallback, useMemo, useState } from "react";
+import React, { createContext, useMemo, useState } from "react";
+
 
 export const access =
 {
@@ -39,7 +40,6 @@ export default function UserAccessProvider({children})
     {
         setAuthUser({...user, tableStructure: tlbStructure});
     }
-
 
     const contextValue = useMemo(()=>(
         {user,
