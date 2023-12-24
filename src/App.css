@@ -50,6 +50,18 @@ html, body{
     overflow: hidden;
 }
 
+.FlexContainer
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.FlexRow
+{
+    display: flex;
+    flex-direction: row;
+}
+
 .UiSection
 {
     display: flex;
