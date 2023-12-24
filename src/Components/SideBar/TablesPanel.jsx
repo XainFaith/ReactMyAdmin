@@ -7,6 +7,7 @@ import useApi from "../../Hooks/useApi";
 import useAuthContext from "../../Hooks/useAuthContext";
 
 import "./TablesPanel.css";
+import OverflowContainer from "../UI/OverflowContainer";
 
 export default function TablesPanel()
 {
@@ -36,13 +37,13 @@ export default function TablesPanel()
     }
 
     return(
-        <div className="TablesPanel">
-        <LoadingOverlay isActive={awaiting}>
+        <LoadingOverlay isActive={awaiting} >
         <div className="TablesPanelHeader"><h3>Tables:</h3><Button className="TablesRefresh" onClick={onTablesRefresh}/></div>
-        <div className="TablesNavContainer">
-            {(response && error == null )? <NavList navElements={response.tables} className="TablesNavList" onItemSelected={onTableSelected}/> : "No Tables Avaliable"}
-        </div>
+        <OverflowContainer>
+            <div className="TablesPanel">
+              {(response && error == null )? <NavList navElements={response.tables} className="TablesNavList" onItemSelected={onTableSelected}/> : "No Tables Avaliable"}
+            </div>
+        </OverflowContainer>
         </LoadingOverlay>
-    </div>
     );
 }

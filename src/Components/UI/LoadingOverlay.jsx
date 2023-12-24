@@ -8,9 +8,7 @@ export default function LoadingOverlay({isActive, children})
 
     return(
         <div className="OverlayContainer">
-            <div>
                 {children}
-            </div>
             {overlay}
         </div>
     )

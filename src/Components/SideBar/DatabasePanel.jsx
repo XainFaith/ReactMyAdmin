@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import LoadingOverlay from "../UI/LoadingOverlay";
 import NavList from "../UI/NavList";
 import Button from "../UI/Button";
+import OverflowContainer from "../UI/OverflowContainer";
 
 import useApi from "../../Hooks/useApi";
 import useAuthContext from "../../Hooks/useAuthContext";
@@ -28,14 +29,14 @@ export default function DatabasePanel()
     }
 
     return(
+        <LoadingOverlay isActive={awaiting}>
+        <div className="DatabasesPanelHeader"><h3>Databases:</h3><Button className="DatabaseRefresh" onClick={onDatabasesRefresh}/></div>
+        <OverflowContainer>
         <div className="DatabasePanel">
-            <LoadingOverlay isActive={awaiting}>
-            <div className="DatabasesPanelHeader"><h3>Databases:</h3><Button className="DatabaseRefresh" onClick={onDatabasesRefresh}/></div>
-            <div className="DatabaseNavContainer">
-                {response ? <NavList navElements={response.databases} className="DatabaseNavList" onItemSelected={onDatabaseSelected}/> : "No Databases Avaliable"}
-            </div>
-            </LoadingOverlay>
+            {response ? <NavList navElements={response.databases} className="DatabaseNavList" onItemSelected={onDatabaseSelected}/> : "No Databases Avaliable"}
         </div>
+        </OverflowContainer>
+        </LoadingOverlay>
     );
 
 }
