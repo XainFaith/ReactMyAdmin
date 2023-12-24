@@ -9,6 +9,7 @@
     border-bottom: 0;
     cursor: ew-resize;
     align-items: center;
+    z-index: 999;
 }
 
 .ResizeHandle.Vertical
@@ -20,6 +21,7 @@
     border-left: 0;
     border-right: 0;
     cursor: ns-resize;
+    z-index: 999;
 }
 
 .ResizeHandle:hover
