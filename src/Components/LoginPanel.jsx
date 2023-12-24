@@ -45,7 +45,7 @@ export default function LoginPanel()
     },[response])
 
     return(
-        <ModalPanel Title="React My Admin">
+        <ModalPanel Title="React My Admin" isVisible>
             <LoadingOverlay isActive={awaiting}>
                 <form>
                     <div className="UiSection">
