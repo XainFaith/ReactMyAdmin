@@ -9,6 +9,7 @@
 .NavList li{
     padding: 5px;
     cursor: pointer;
+    display: flex;
 }
 
 .NavList li:hover{
