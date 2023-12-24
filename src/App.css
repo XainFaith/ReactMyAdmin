@@ -30,6 +30,7 @@ html, body{
 {
     background-color: whitesmoke;
     height: 100%;
+    width: 100%;
 }
 
 .WorkSpace
@@ -45,7 +46,7 @@ html, body{
 {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    flex-grow: 1;
     overflow: hidden;
 }
 
