@@ -12,15 +12,16 @@ export default function Workspace()
             <Tab name="Structure">
                 <StructureViewer />
             </Tab>
+
             <Tab name="Browse">
-
             </Tab>
+
             <Tab name="SQL">
-
             </Tab>
+
             <Tab name="Search">
-
             </Tab>
+            
         </TabContainer>
     )
 
