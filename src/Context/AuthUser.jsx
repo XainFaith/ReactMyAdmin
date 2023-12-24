@@ -22,7 +22,7 @@ export default function UserAccessProvider({children})
 
     const onLogout =()=>
     {
-        setAuthUser({...user, authToken: null});
+        setAuthUser({...user, authToken: null, selectedDatabase: null, selectedTable: null, privileges: [], tableStructure: null});
     };
 
     const onDatabaseSelected = (name)=>
