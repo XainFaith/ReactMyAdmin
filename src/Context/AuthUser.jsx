@@ -6,6 +6,7 @@ export const access =
     privileges: [],
     selectedDatabase: null,
     selectedTable: null,
+    tableStructure: null
 }
 
 export const AuthUserContext = createContext();
@@ -34,13 +35,19 @@ export default function UserAccessProvider({children})
         setAuthUser({...user, selectedTable: name});
     };
 
+    const onTableStructure = (tlbStructure) =>
+    {
+        setAuthUser({...user, tableStructure: tlbStructure});
+    }
+
 
     const contextValue = useMemo(()=>(
         {user,
          onGranted, 
          onLogout,
          onDatabaseSelected,
-         onTableSelected
+         onTableSelected,
+         onTableStructure
         }), [user]);
 
     return(
