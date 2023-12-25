@@ -4,13 +4,13 @@
     position: fixed;
     left: 100vw;
     top: 0;
+    z-index: 9999;
 }
 
 .Toast
 {
     max-width: 430px;
     min-width: 200px;
-    z-index: 99;
     display: grid;
     grid-auto-flow: column;
     grid-gap: 24px;
