@@ -13,6 +13,7 @@ export default function StructureDataTableHeader()
             <th>Key:</th>
             <th>Default:</th>
             <th>Extra:</th>
+            <th>Actions:</th>
         </tr>
     );
 }

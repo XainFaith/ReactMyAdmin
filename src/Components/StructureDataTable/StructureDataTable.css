@@ -13,3 +13,21 @@
 {
     background-color: var(--secondary);
 }
+
+.StructureActionField
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.StructureActionField > button
+{
+    
+    margin-left: 5px;
+    margin-right: 5px;
+    width: auto;
+    font-weight: 400;
+    padding: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
