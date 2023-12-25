@@ -1,0 +1,34 @@
+.Checkbox 
+{
+    appearance: none;
+    background-color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    color: currentColor;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+.Checkbox::before 
+{
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--primary);
+    
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.Checkbox:checked::before 
+{
+    transform: scale(1);
+}
