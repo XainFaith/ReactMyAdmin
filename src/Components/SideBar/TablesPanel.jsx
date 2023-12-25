@@ -38,7 +38,12 @@ export default function TablesPanel()
 
     return(
         <LoadingOverlay isActive={awaiting} >
-        <div className="TablesPanelHeader"><h3>Tables:</h3><Button className="TablesRefresh" onClick={onTablesRefresh}/></div>
+        <div className="TablesPanelHeader">
+            <h3>Tables:</h3>
+            <Button className="TablesDrop"/>
+            <Button className="TablesAdd"/>
+            <Button className="TablesRefresh" onClick={onTablesRefresh}/>
+        </div>
         <OverflowContainer>
             <div className="TablesPanel">
               {(response && error == null )? <NavList navElements={response.tables} className="TablesNavList" onItemSelected={onTableSelected}/> : "No Tables Avaliable"}

@@ -28,7 +28,6 @@
 
 .DatabaseRefresh
 {
-    margin-left: auto;
     background-image: url("../../../assets/refresh-icon.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -54,3 +53,33 @@
     margin-right: 5px;
 }
 
+.DatabaseDrop
+{
+    background-image: url("../../../assets/sub-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+}
+
+.DatabaseDrop:hover
+{
+    background-image: url("../../../assets/sub-icon-active.png");
+}
+
+.DatabaseAdd
+{
+    background-image: url('../../../assets/add-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+}
+
+.DatabaseAdd:hover
+{
+    background-image: url('../../../assets/add-icon-active.png');
+}

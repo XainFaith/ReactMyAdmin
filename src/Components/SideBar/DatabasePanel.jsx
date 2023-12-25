@@ -30,7 +30,12 @@ export default function DatabasePanel()
 
     return(
         <LoadingOverlay isActive={awaiting}>
-        <div className="DatabasesPanelHeader"><h3>Databases:</h3><Button className="DatabaseRefresh" onClick={onDatabasesRefresh}/></div>
+        <div className="DatabasesPanelHeader">
+            <h3>Databases:</h3>
+            <Button className="DatabaseDrop"/>
+            <Button className="DatabaseAdd"/>
+            <Button className="DatabaseRefresh" onClick={onDatabasesRefresh}/>
+        </div>
         <OverflowContainer>
         <div className="DatabasePanel">
             {response ? <NavList navElements={response.databases} className="DatabaseNavList" onItemSelected={onDatabaseSelected}/> : "No Databases Avaliable"}

@@ -21,7 +21,6 @@
 
 .TablesRefresh
 {
-    margin-left: auto;
     background-image: url("../../../assets/refresh-icon.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -33,6 +32,37 @@
 .TablesRefresh:hover
 {
     background-image: url("../../../assets/refresh-icon-active.png");
+}
+
+.TablesDrop
+{
+    background-image: url("../../../assets/sub-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+}
+
+.TablesDrop:hover
+{
+    background-image: url("../../../assets/sub-icon-active.png");
+}
+
+.TablesAdd
+{
+    background-image: url('../../../assets/add-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+}
+
+.TablesAdd:hover
+{
+    background-image: url('../../../assets/add-icon-active.png');
 }
 
 .TablesNavList li::before
